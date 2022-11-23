@@ -1,0 +1,14 @@
+{
+  "$id": "vidyard_hostingProvider",
+  "$schema": "https://schema.yext.com/config/km/field/v1",
+  "displayName": "Hosting Provider",
+  "group": "NONE",
+  "localization": "OVERRIDABLE",
+  "type": {
+    "stringType": {
+      "stereotype": "SIMPLE",
+      "maxLength": 512
+    }
+  },
+  "typeId": "string"
+}

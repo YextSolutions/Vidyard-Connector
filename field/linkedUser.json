@@ -1,0 +1,19 @@
+{
+  "$id": "vidyard_linkedUser",
+  "$schema": "https://schema.yext.com/config/km/field/v1",
+  "displayName": "Vidyard Linked User",
+  "group": "NONE",
+  "localization": "PRIMARY_ONLY",
+  "type": {
+    "listType": {
+      "typeId": "entityReference",
+      "type": {
+        "entityReferenceType": {
+          "relatedFieldId": "vidyard_linkedVideo",
+          "type": "TWO_WAY"
+        }
+      }
+    }
+  },
+  "typeId": "list"
+}
