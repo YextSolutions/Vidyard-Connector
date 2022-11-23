@@ -6,7 +6,7 @@ Pull in your Vidyard videos and users with Yext's new Vidyard Connector! Vidyard
 
 The Vidyard connector will pull in data about your videos including, but not limited to: title, duration, video link, author, video duration, etc. Note: The connector is configured to run comprehensively on a daily cadence.
 
-This app aligns with two new Yext entity types (Vidyard Video and Vidyard User) and creates 10 custom fields:
+This app aligns with two new entity types (Vidyard Video and Vidyard User) and creates 9 custom fields:
 
 - Duration (seconds)
 - Duration (milliseconds)
