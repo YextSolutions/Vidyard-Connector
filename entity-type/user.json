@@ -1,0 +1,7 @@
+{
+  "$id": "vidyard_user",
+  "$schema": "https://schema.yext.com/config/km/entity-type/v2",
+  "description": "Use this entity type to store users from your Vidyard account.",
+  "displayName": "Vidyard User",
+  "pluralDisplayName": ""
+}

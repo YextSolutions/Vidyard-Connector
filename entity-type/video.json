@@ -1,0 +1,7 @@
+{
+  "$id": "vidyard_video",
+  "$schema": "https://schema.yext.com/config/km/entity-type/v2",
+  "description": "Use this entity type to store Vidyard videos.",
+  "displayName": "Vidyard Video",
+  "pluralDisplayName": ""
+}
