@@ -1,5 +1,5 @@
 {
-  "$id": "vidyard_vidyardUser",
+  "$id": "vidyard_User",
   "$schema": "https://schema.yext.com/config/km/field-presentation/v1",
   "entityType": "vidyard_user",
   "displayName": "Vidyard User",
