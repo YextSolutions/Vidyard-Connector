@@ -1,0 +1,18 @@
+{
+  "$id": "vidyard_video.default",
+  "$schema": "https://schema.yext.com/config/km/field-eligibility-group/v1",
+  "name": "Vidyard Video-default",
+  "entityType": "vidyard_video",
+  "fields": [
+    "description",
+    "vidyard_dateCreated",
+    "vidyard_dateUpdated",
+    "vidyard_durationMilliseconds",
+    "vidyard_durationSeconds",
+    "vidyard_hostingProvider",
+    "vidyard_linkedUser",
+    "vidyard_status",
+    "websiteUrl"
+  ],
+  "required": []
+}

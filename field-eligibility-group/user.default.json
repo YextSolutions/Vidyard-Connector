@@ -1,0 +1,14 @@
+{
+  "$id": "vidyard_user.default",
+  "$schema": "https://schema.yext.com/config/km/field-eligibility-group/v1",
+  "name": "Vidyard User-default",
+  "entityType": "vidyard_user",
+  "fields": [
+    "emails",
+    "primaryPhoto",
+    "vidyard_calendarLink",
+    "vidyard_dateCreated",
+    "vidyard_role"
+  ],
+  "required": []
+}
