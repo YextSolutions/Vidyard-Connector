@@ -1,0 +1,295 @@
+{
+  "$id": "vidyardVideoConnector",
+  "$schema": "https://schema.yext.com/config/km/connector/v3",
+  "displayName": "Vidyard Video Connector",
+  "entityType": "vidyard_video",
+  "source": {
+    "sourceConfig": {
+      "apiPullConfig": {
+        "requestType": "GET",
+        "url": "https://api.vidyard.com/dashboard/v1/videos",
+        "authentication": {
+          "apiKey": {
+            "key": "auth_token",
+            "value": "${{km/connector.vidyardVideoConnector.api_key_value}}",
+            "setAsHeader": false
+          }
+        },
+        "paginationControl": {
+          "pageBasedPagination": {
+            "pageKey": "page",
+            "pageStartValue": 1,
+            "limitKey": "per-page",
+            "limitValue": 50
+          }
+        },
+        "headers": {
+          "Accept": "application/json",
+          "Content-Type": "application/json"
+        },
+        "queryParams": {
+          "": ""
+        },
+        "dataFormat": "JSON"
+      }
+    },
+    "baseSelector": {
+      "type": "JSON",
+      "header": "Entity Container",
+      "path": "videos"
+    },
+    "selectors": [
+      {
+        "type": "JSON",
+        "header": "name",
+        "path": "name"
+      },
+      {
+        "type": "JSON",
+        "header": "upload_url",
+        "path": "upload_url"
+      },
+      {
+        "type": "JSON",
+        "header": "notes",
+        "path": "notes"
+      },
+      {
+        "type": "JSON",
+        "header": "description",
+        "path": "description"
+      },
+      {
+        "type": "JSON",
+        "header": "sync",
+        "path": "sync"
+      },
+      {
+        "type": "JSON",
+        "header": "sync_thumbnail",
+        "path": "sync_thumbnail"
+      },
+      {
+        "type": "JSON",
+        "header": "audio_gain",
+        "path": "audio_gain"
+      },
+      {
+        "type": "JSON",
+        "header": "webhook_url",
+        "path": "webhook_url"
+      },
+      {
+        "type": "JSON",
+        "header": "current_thumbnail_id",
+        "path": "current_thumbnail_id"
+      },
+      {
+        "type": "JSON",
+        "header": "tags_attributes",
+        "path": "tags_attributes"
+      },
+      {
+        "type": "JSON",
+        "header": "seconds",
+        "path": "seconds"
+      },
+      {
+        "type": "JSON",
+        "header": "milliseconds",
+        "path": "milliseconds"
+      },
+      {
+        "type": "JSON",
+        "header": "id",
+        "path": "id"
+      },
+      {
+        "type": "JSON",
+        "header": "uuid",
+        "path": "uuid"
+      },
+      {
+        "type": "JSON",
+        "header": "status",
+        "path": "status"
+      },
+      {
+        "type": "JSON",
+        "header": "error_message",
+        "path": "error_message"
+      },
+      {
+        "type": "JSON",
+        "header": "created_at",
+        "path": "created_at"
+      },
+      {
+        "type": "JSON",
+        "header": "updated_at",
+        "path": "updated_at"
+      },
+      {
+        "type": "JSON",
+        "header": "organization_id",
+        "path": "organization_id"
+      },
+      {
+        "type": "JSON",
+        "header": "origin",
+        "path": "origin"
+      },
+      {
+        "type": "JSON",
+        "header": "is_secure",
+        "path": "is_secure"
+      },
+      {
+        "type": "JSON",
+        "header": "hosting_provider",
+        "path": "hosting_provider"
+      },
+      {
+        "type": "JSON",
+        "header": "sync_captions",
+        "path": "sync_captions"
+      },
+      {
+        "type": "JSON",
+        "header": "video_type",
+        "path": "video_type"
+      },
+      {
+        "type": "JSON",
+        "header": "aspect_width",
+        "path": "aspect_width"
+      },
+      {
+        "type": "JSON",
+        "header": "aspect_height",
+        "path": "aspect_height"
+      },
+      {
+        "type": "JSON",
+        "header": "created_by_client_id",
+        "path": "created_by_client_id"
+      },
+      {
+        "type": "JSON",
+        "header": "blender_campaign_uuid",
+        "path": "blender_campaign_uuid"
+      },
+      {
+        "type": "JSON",
+        "header": "facade_player_uuid",
+        "path": "facade_player_uuid"
+      },
+      {
+        "type": "JSON",
+        "header": "user_id",
+        "path": "user_id"
+      },
+      {
+        "type": "JSON",
+        "header": "user_team_id",
+        "path": "user_team_id"
+      },
+      {
+        "type": "JSON",
+        "header": "trim_slices_duration_ms",
+        "path": "trim_slices_duration_ms"
+      }
+    ]
+  },
+  "transforms": [
+    {
+      "addColumn": {
+        "newColumnHeader": "URL Prefix",
+        "columnValue": "https://share.vidyard.com/watch"
+      }
+    },
+    {
+      "mergeColumns": {
+        "inputHeaders": [
+          "URL Prefix",
+          "facade_player_uuid"
+        ],
+        "newColumnHeader": "Video URL",
+        "delimiter": ""
+      }
+    },
+    {
+      "function": {
+        "inputHeaders": {
+          "headers": [
+            "created_at",
+            "updated_at"
+          ]
+        },
+        "plugin": "unixFormatDate",
+        "function": "formatDate"
+      }
+    }
+  ],
+  "mappings": [
+    {
+      "field": "vidyard_durationMilliseconds",
+      "header": "milliseconds",
+      "subfieldPath": []
+    },
+    {
+      "field": "vidyard_durationSeconds",
+      "header": "seconds",
+      "subfieldPath": []
+    },
+    {
+      "field": "vidyard_linkedUser",
+      "header": "user_id",
+      "subfieldPath": []
+    },
+    {
+      "field": "name",
+      "header": "name",
+      "subfieldPath": []
+    },
+    {
+      "field": "description",
+      "header": "description",
+      "subfieldPath": []
+    },
+    {
+      "field": "entityId",
+      "header": "id",
+      "subfieldPath": []
+    },
+    {
+      "field": "vidyard_status",
+      "header": "status",
+      "subfieldPath": []
+    },
+    {
+      "field": "vidyard_dateCreated",
+      "header": "created_at",
+      "subfieldPath": []
+    },
+    {
+      "field": "vidyard_dateUpdated",
+      "header": "updated_at",
+      "subfieldPath": []
+    },
+    {
+      "field": "vidyard_hostingProvider",
+      "header": "hosting_provider",
+      "subfieldPath": []
+    },
+    {
+      "field": "websiteUrl",
+      "header": "Video URL",
+      "subfieldPath": [
+        {
+          "name": "url"
+        }
+      ]
+    }
+  ]
+}

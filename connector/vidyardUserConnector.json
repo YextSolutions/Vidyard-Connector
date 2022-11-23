@@ -1,0 +1,173 @@
+{
+  "$id": "vidyardUserConnector",
+  "$schema": "https://schema.yext.com/config/km/connector/v3",
+  "displayName": "Vidyard User Connector",
+  "entityType": "vidyard_user",
+  "source": {
+    "sourceConfig": {
+      "apiPullConfig": {
+        "requestType": "GET",
+        "url": "https://api.vidyard.com/dashboard/v1/users",
+        "authentication": {
+          "apiKey": {
+            "key": "auth_token",
+            "value": "${{km/connector.vidyardUserConnector.api_key_value}}",
+            "setAsHeader": false
+          }
+        },
+        "paginationControl": {
+          "pageBasedPagination": {
+            "pageKey": "page",
+            "pageStartValue": 1,
+            "limitKey": "per-page",
+            "limitValue": 50
+          }
+        },
+        "headers": {
+          "Accept": "application/json",
+          "Content-Type": "application/json"
+        },
+        "queryParams": {
+          "": ""
+        },
+        "dataFormat": "JSON"
+      }
+    },
+    "baseSelector": {
+      "type": "JSON",
+      "header": "Entity Container",
+      "path": "users"
+    },
+    "selectors": [
+      {
+        "type": "JSON",
+        "header": "id",
+        "path": "id"
+      },
+      {
+        "type": "JSON",
+        "header": "email",
+        "path": "email"
+      },
+      {
+        "type": "JSON",
+        "header": "first_name",
+        "path": "first_name"
+      },
+      {
+        "type": "JSON",
+        "header": "last_name",
+        "path": "last_name"
+      },
+      {
+        "type": "JSON",
+        "header": "job_title",
+        "path": "job_title"
+      },
+      {
+        "type": "JSON",
+        "header": "calendar_link",
+        "path": "calendar_link"
+      },
+      {
+        "type": "JSON",
+        "header": "skip_invitation",
+        "path": "skip_invitation"
+      },
+      {
+        "type": "JSON",
+        "header": "created_at",
+        "path": "created_at"
+      },
+      {
+        "type": "JSON",
+        "header": "updated_at",
+        "path": "updated_at"
+      },
+      {
+        "type": "JSON",
+        "header": "last_sign_in_at",
+        "path": "last_sign_in_at"
+      },
+      {
+        "type": "JSON",
+        "header": "last_seen_at",
+        "path": "last_seen_at"
+      },
+      {
+        "type": "JSON",
+        "header": "avatar",
+        "path": "avatar"
+      }
+    ]
+  },
+  "transforms": [
+    {
+      "mergeColumns": {
+        "inputHeaders": [
+          "first_name",
+          "last_name"
+        ],
+        "newColumnHeader": "Full Name",
+        "delimiter": " "
+      }
+    },
+    {
+      "formatDates": {
+        "inputHeaders": {
+          "headers": [
+            "created_at",
+            "updated_at",
+            "last_sign_in_at",
+            "last_seen_at"
+          ]
+        },
+        "inputFormat": "yyyy-MM-dd\u0027T\u0027kk:mm:ssX"
+      }
+    }
+  ],
+  "mappings": [
+    {
+      "field": "vidyard_calendarLink",
+      "header": "calendar_link",
+      "subfieldPath": []
+    },
+    {
+      "field": "name",
+      "header": "Full Name",
+      "subfieldPath": []
+    },
+    {
+      "field": "entityId",
+      "header": "id",
+      "subfieldPath": []
+    },
+    {
+      "field": "vidyard_role",
+      "header": "job_title",
+      "subfieldPath": []
+    },
+    {
+      "field": "emails",
+      "header": "email",
+      "subfieldPath": []
+    },
+    {
+      "field": "vidyard_dateCreated",
+      "header": "created_at",
+      "subfieldPath": []
+    },
+    {
+      "field": "primaryPhoto",
+      "header": "avatar",
+      "subfieldPath": [
+        {
+          "name": "image"
+        },
+        {
+          "name": "url"
+        }
+      ]
+    }
+  ]
+}
