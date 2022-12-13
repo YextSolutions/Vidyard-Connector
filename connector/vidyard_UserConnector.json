@@ -11,7 +11,7 @@
         "authentication": {
           "apiKey": {
             "key": "auth_token",
-            "value": "${{km/connector.vidyardUserConnector.api_key_value}}",
+            "value": "${{apiKey}}",
             "setAsHeader": false
           }
         },
