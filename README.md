@@ -30,3 +30,7 @@ Before installing the app do the following :
 1. Log into your Vidyard account
 2. Navigate to Admin > API Tokens > Admin and click “Show Token”
 3. Copy down the API Token value. This will serve as your API Key.
+
+After installing the app:
+1. Run the user connector
+2. Run the video connector
