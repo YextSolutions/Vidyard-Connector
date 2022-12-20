@@ -1,5 +1,5 @@
 {
-  "$id": "vidyardVideoConnector",
+  "$id": "vidyard_VideoConnector",
   "$schema": "https://schema.yext.com/config/km/connector/v3",
   "displayName": "Vidyard Video Connector",
   "entityType": "vidyard_video",
