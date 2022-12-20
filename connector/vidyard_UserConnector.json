@@ -1,5 +1,5 @@
 {
-  "$id": "vidyardUserConnector",
+  "$id": "vidyard_UserConnector",
   "$schema": "https://schema.yext.com/config/km/connector/v3",
   "displayName": "Vidyard User Connector",
   "entityType": "vidyard_user",
