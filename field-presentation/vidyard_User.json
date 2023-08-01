@@ -1,57 +1,57 @@
 {
-  "$id": "vidyard_User",
-  "$schema": "https://schema.yext.com/config/km/field-presentation/v1",
-  "entityType": "vidyard_user",
-  "displayName": "Vidyard User",
-  "presentationEntries": [
-    {
-      "displayName": "Content",
-      "entryType": "DIVIDER"
-    },
-    {
-      "displayName": "Core Information",
-      "entryType": "SECTION",
-      "fields": [
+    "$id": "vidyard_User",
+    "$schema": "https://schema.yext.com/config/km/field-presentation/v1",
+    "entityType": "vidyard_user",
+    "displayName": "Vidyard User",
+    "presentationEntries": [
         {
-          "id": "name",
-          "visibleOnAdd": true
+            "displayName": "Content",
+            "entryType": "DIVIDER"
         },
         {
-          "id": "entityId",
-          "visibleOnAdd": true
+            "displayName": "Core Information",
+            "entryType": "SECTION",
+            "fields": [
+                {
+                    "id": "name",
+                    "visibleOnAdd": true
+                },
+                {
+                    "id": "entityId",
+                    "visibleOnAdd": true
+                },
+                {
+                    "id": "emails"
+                },
+                {
+                    "id": "vidyard_role"
+                },
+                {
+                    "id": "vidyard_calendarLink"
+                },
+                {
+                    "id": "primaryPhoto"
+                },
+                {
+                    "id": "vidyard_dateCreated"
+                }
+            ]
         },
         {
-          "id": "emails"
+            "displayName": "Other",
+            "entryType": "DIVIDER"
         },
         {
-          "id": "vidyard_role"
-        },
-        {
-          "id": "vidyard_calendarLink"
-        },
-        {
-          "id": "primaryPhoto"
-        },
-        {
-          "id": "vidyard_dateCreated"
+            "displayName": "Internal Use Only",
+            "entryType": "SECTION",
+            "fields": [
+                {
+                    "id": "folder"
+                },
+                {
+                    "id": "labels"
+                }
+            ]
         }
-      ]
-    },
-    {
-      "displayName": "Other",
-      "entryType": "DIVIDER"
-    },
-    {
-      "displayName": "Internal Use Only",
-      "entryType": "SECTION",
-      "fields": [
-        {
-          "id": "folder"
-        },
-        {
-          "id": "labels"
-        }
-      ]
-    }
-  ]
+    ]
 }

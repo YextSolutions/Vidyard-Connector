@@ -1,69 +1,69 @@
 {
-  "$id": "vidyard_Video",
-  "$schema": "https://schema.yext.com/config/km/field-presentation/v1",
-  "entityType": "vidyard_video",
-  "displayName": "Vidyard Video",
-  "presentationEntries": [
-    {
-      "displayName": "Content",
-      "entryType": "DIVIDER"
-    },
-    {
-      "displayName": "Core Information",
-      "entryType": "SECTION",
-      "fields": [
+    "$id": "vidyard_Video",
+    "$schema": "https://schema.yext.com/config/km/field-presentation/v1",
+    "entityType": "vidyard_video",
+    "displayName": "Vidyard Video",
+    "presentationEntries": [
         {
-          "id": "name",
-          "visibleOnAdd": true
+            "displayName": "Content",
+            "entryType": "DIVIDER"
         },
         {
-          "id": "entityId",
-          "visibleOnAdd": true
+            "displayName": "Core Information",
+            "entryType": "SECTION",
+            "fields": [
+                {
+                    "id": "name",
+                    "visibleOnAdd": true
+                },
+                {
+                    "id": "entityId",
+                    "visibleOnAdd": true
+                },
+                {
+                    "id": "description"
+                },
+                {
+                    "id": "websiteUrl"
+                },
+                {
+                    "id": "vidyard_durationSeconds"
+                },
+                {
+                    "id": "vidyard_durationMilliseconds"
+                },
+                {
+                    "id": "vidyard_status"
+                },
+                {
+                    "id": "vidyard_dateCreated"
+                },
+                {
+                    "id": "vidyard_dateUpdated"
+                },
+                {
+                    "id": "vidyard_hostingProvider"
+                },
+                {
+                    "id": "vidyard_linkedUser"
+                }
+            ]
         },
         {
-          "id": "description"
+            "displayName": "Other",
+            "entryType": "DIVIDER"
         },
         {
-          "id": "websiteUrl"
-        },
-        {
-          "id": "vidyard_durationSeconds"
-        },
-        {
-          "id": "vidyard_durationMilliseconds"
-        },
-        {
-          "id": "vidyard_status"
-        },
-        {
-          "id": "vidyard_dateCreated"
-        },
-        {
-          "id": "vidyard_dateUpdated"
-        },
-        {
-          "id": "vidyard_hostingProvider"
-        },
-        {
-          "id": "vidyard_linkedUser"
+            "displayName": "Internal Use Only",
+            "entryType": "SECTION",
+            "fields": [
+                {
+                    "id": "folder"
+                },
+                {
+                    "id": "labels"
+                }
+            ]
         }
-      ]
-    },
-    {
-      "displayName": "Other",
-      "entryType": "DIVIDER"
-    },
-    {
-      "displayName": "Internal Use Only",
-      "entryType": "SECTION",
-      "fields": [
-        {
-          "id": "folder"
-        },
-        {
-          "id": "labels"
-        }
-      ]
-    }
-  ]
+    ]
 }
